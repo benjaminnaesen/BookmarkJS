@@ -1,6 +1,10 @@
 var siteNameInput = document.getElementById('siteName');
 var siteURLInput = document.getElementById('siteURL');
 
+var openTabs = localStorage.getItem('tab');
+openTabs = openTabs.slice(0, -9) + "Tab";
+document.getElementById(openTabs).click();
+
 // Listen for submissions
 document.getElementById('myForm').addEventListener('submit', (e) => {
     // Receive form values
@@ -124,4 +128,30 @@ function fetchBookmarks() {
             '<div class="col col-md-2 right">' + date + '</div></div>' + hr;
     }
 
+}
+
+function openTab(evt, tabName){
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById('bookmarkContainer').style.display = "none";
+    document.getElementById('listContainer').style.display = "none";
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+
+    // Save
+    localStorage.setItem('tab', tabName);
 }

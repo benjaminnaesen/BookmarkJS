@@ -50,3 +50,10 @@ div.tab button.active {
 .tabcontent {
     display: none;
 }
+
+#dashboardContainer a {
+    margin-top: 3px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 3px;
+}

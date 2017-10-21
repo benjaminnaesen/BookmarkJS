@@ -108,8 +108,10 @@ function fetchBookmarks() {
 
     // Show bookmarks
     var divBookmarks = document.getElementById('divBookmarks');
+    var dashboardBookmarks = document.getElementById('dashboardBookmarks');
 
     divBookmarks.innerHTML = '';
+    dashboardBookmarks.innerHTML = '';
 
     for (var i = 0; i < bookmarks.length; i++) {
         var name = bookmarks[i].name;
@@ -126,6 +128,9 @@ function fetchBookmarks() {
             '<div class="col col-md-1 right"><a  target="_blank" href="' + url + '">Visit</a></div>' +
             '<div class="col col-md-1 red right"><a onclick="deleteBookmark(\'' + url + '\')" href="#">Delete</a></div>' +
             '<div class="col col-md-2 right">' + date + '</div></div>' + hr;
+
+        dashboardBookmarks.innerHTML += '<div class="row">' +
+           '<a href="' + url + '"/>' + name + '</a></div>';
     }
 
 }
@@ -148,6 +153,8 @@ function openTab(evt, tabName){
 
     document.getElementById('bookmarkContainer').style.display = "none";
     document.getElementById('listContainer').style.display = "none";
+    document.getElementById('dashboardContainer').style.display = "none";
+    document.getElementById('cryptoContainer').style.display = "none";
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";

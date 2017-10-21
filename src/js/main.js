@@ -119,9 +119,9 @@ function fetchBookmarks() {
 
         divBookmarks.innerHTML += '<div class="row"><div class="col col-md-8">' +
             '<strong>' + name + '</strong></div>' +
-            '<div class="col col-md-1"><a  target="_blank" href="' + url + '">Visit</a></div>' +
-            '<div class="col col-md-1 red"><a onclick="deleteBookmark(\'' + url + '\')" href="#">Delete</a></div>' +
-            '<div class="col col-md-2">' + date + '</div></div>' + hr;
+            '<div class="col col-md-1 right"><a  target="_blank" href="' + url + '">Visit</a></div>' +
+            '<div class="col col-md-1 red right"><a onclick="deleteBookmark(\'' + url + '\')" href="#">Delete</a></div>' +
+            '<div class="col col-md-2 right">' + date + '</div></div>' + hr;
     }
 
 }

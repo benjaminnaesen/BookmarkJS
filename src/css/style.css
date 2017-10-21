@@ -14,3 +14,7 @@ body {
 .red a {
     color: red;
 }
+
+.right {
+    text-align: right;
+}
